@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,25 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <div id="cardsContainer"></div>
-    
+    <div id="navbarContainer">
+        <div id="searchBar">
+            <input type="text" placeholder="Search" id="locationSearchText">
+            <button id="locationSearchButton">🔍</button>
+        </div>
+        
+        <h1 id="cityHeadline"></h1>
+
+        <div id="chooseButtons">
+            <button id="hourlyButton" class="navButtons">Hourly</button>
+            <button id="dailyButton" class="navButtons">Daily</button>
+        </div>
+    </div>
+    <div id="cardsContainer">
+
+    </div>
     <script src="./src/script.js" type="module"></script>
 </body>
+
 </html>

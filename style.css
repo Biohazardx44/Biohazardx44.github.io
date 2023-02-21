@@ -1,0 +1,115 @@
+@font-face {
+    font-family: Lato;
+    src: url(./Assets/Fonts/Lato/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(./Assets/Fonts/Roboto/Roboto-Bold.ttf);
+}
+
+* {
+    font-family: Roboto;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-black: #000000;
+    --primary-white: #ffffff;
+    --primary-red: #ff0000;
+    --secondary-red: #b31e1e;
+    --primary-gray: rgba(200, 200, 200, 0.5);
+    --secondary-gray: #bcbcbc;
+    --primary-orange: #ff4d00;
+}
+
+body {
+    background-image: url("./Assets/Images/Background_Image.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#pageBody {
+    width: 1080px;
+    margin: 0px auto;
+    background-color: var(--primary-white);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Lato;
+}
+
+#headerBackground {
+    background-image: url("./Assets/Images/Background_Header.webp");
+    border: 5px solid var(--primary-orange);
+    height: 128px;
+    width: 100%;
+}
+
+.page-section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid var(--primary-orange);
+    border-top: 0px;
+}
+
+.card-style {
+    width: 100%;
+    padding: 0px 25px;
+    background-color: var(--secondary-gray);
+}
+
+.page-buttons {
+    font-family: Lato;
+    background-color: var(--secondary-red);
+    color: var(--primary-white);
+    margin-top: 5px;
+    margin-left: 25%;
+    width: 50%;
+    height: 50px;
+    font-size: 2rem;
+    border-radius: 25px;
+    border-color: var(--primary-black);
+    overflow: hidden;
+}
+
+.cv-page-buttons:hover {
+    background-color: var(--primary-red);
+    cursor: pointer;
+}
+
+.cv-page-buttons:focus {
+    outline: none;
+}
+
+.anchored-background-image,
+.anchored-background-image-curtain {
+    height: 100px;
+    border-radius: 25px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.anchored-background-image-curtain {
+    background-color: var(--primary-gray);
+    border: 3px solid var(--primary-black);
+}
+
+#cvBackgroundImage,
+#weatherAppBackgroundImage,
+#hangmanBackgroundImage {
+    background-image: url("./Assets/Images/CV.png");
+    background-size: 100%;
+    background-repeat: repeat;
+}
+
+#weatherAppBackgroundImage {
+    background-image: url("./Assets/Images/WeatherApp.png");
+}
+
+#hangmanBackgroundImage {
+    background-image: url("./Assets/Images/Hangman.png");
+}

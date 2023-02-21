@@ -3,7 +3,7 @@ import DataHelpers from "./helperFunctions/dataHelpers.js";
 import CardTemplates from "./helperFunctions/cardTemplates.js";
 
 const apiParameters = {
-    // globalCity: `Skopje`,
+    globalCity: `Skopje`,
     apiKey: `74e59f6374abe0d9b758877616ae444c`,
     apiFirstUrl: `https://api.openweathermap.org/data/2.5/onecall`,
     apiSecondUrl: `https://api.openweathermap.org/data/2.5/forecast`,
@@ -11,33 +11,71 @@ const apiParameters = {
 }
 
 const cardsContainer = document.getElementById(`cardsContainer`);
+const locationSearchText = document.getElementById('locationSearchText');
+const locationSearchButton = document.getElementById('locationSearchButton');
+const cityHeadline = document.getElementById('cityHeadline');
 
+const hourlyButton = document.getElementById('hourlyButton');
+const dailyButton = document.getElementById('dailyButton');
 
-// setData(`test2`, 5);
-// const data2 = getData(`test2`);
-// console.log(data2);
+async function initializeWeatherApp(local, city = 'Skopje', dailyData) {
+    city = city.trim()
+    if (city.length == 0) city = 'Skopje';
 
-// setData(`test3`, `egagaga`);
-// const data3 = getData(`test3`);
-// console.log(data3);
+    try {
+        let lat;
+        let lon;
+        let cityName;
 
-// setData(`test4`, [2, 5, 6, 7]);
-// const data4 = getData(`test4`);
-// console.log(data4);
+        if (!local) {
+            const cityData = await DataHelpers.getDataFromURLorLocal(`${apiParameters.apiSecondUrl}?q=${city}&units=metric&appid=${apiParameters.apiKey}&exclude=minutely`)
+            const cityObjectParameters = DataHelpers.getCityNameAndGeolocation(cityData.city);
+            lat = cityObjectParameters.coord.lat;
+            lon = cityObjectParameters.coord.lon;
+            cityName = cityObjectParameters.name
+        }
+        else {
+            const position = await getLocation();
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            const cityToExtract = await DataHelpers.getDataFromURLorLocal(`${apiParameters.apiSecondUrl}?lat=${lat}&lon=${lon}&units=metric&appid=${apiParameters.apiKey}&exclude=minutely`)
+            cityName = cityToExtract.city.name;
+        }
 
-getLocation()
-    .then(position => {
-        // const {latitude, longitude} = position.coords;
-        console.log(position);
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
+        const data = await DataHelpers.getDataFromURLorLocal(`${apiParameters.apiFirstUrl}?lat=${lat}&lon=${lon}&units=metric&appid=${apiParameters.apiKey}&exclude=minutely`)
+        cityHeadline.innerHTML = cityName;
 
-        DataHelpers.getDataFromURLorLocal(`${apiParameters.apiFirstUrl}?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiParameters.apiKey}&exclude=minutely`)
-            .then(data => {
-                // console.log(data);
-                for (let element of data.hourly) {
-                    const cardHtml = CardTemplates.hourly(element);
-                    cardsContainer.innerHTML += cardHtml;
-                }
+        cardsContainer.innerHTML = '';
+
+        if (dailyData) {
+            data.daily.forEach((element, index) => {
+                const cardHtml = CardTemplates.daily(element, data.timezone_offset, index);
+                cardsContainer.innerHTML += cardHtml;
             })
-    })
+        }
+        else {
+            for (let element of data.hourly) {
+                const cardHtml = CardTemplates.hourly(element, data.timezone_offset);
+                cardsContainer.innerHTML += cardHtml;
+            }
+        }
+
+    }
+    catch (e) {
+        console.error(e);
+    }
+}
+
+locationSearchButton.addEventListener('click', () => {
+    initializeWeatherApp(false, locationSearchText.value);
+})
+
+hourlyButton.addEventListener('click', () => {
+    initializeWeatherApp(false, locationSearchText.value, false);
+})
+
+dailyButton.addEventListener('click', () => {
+    initializeWeatherApp(false, locationSearchText.value, true);
+})
+
+initializeWeatherApp(true);

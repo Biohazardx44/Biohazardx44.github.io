@@ -5,7 +5,7 @@
 }
 
 body{
-    background-image: url(./assets/wp3980172.webp);
+    background-image: url(./Assets/Background_Image.webp);
     background-attachment: fixed;
 }
 
@@ -42,6 +42,10 @@ body{
     font-size: 3rem;
 }
 
+.weather-card__day {
+    font-size: 2rem;
+}
+
 .weather-card__precipitation{
 text-align: center;
 font-size: 3.5rem;
@@ -53,4 +57,42 @@ font-size: 3.5rem;
 
 .weather-card__wind-speed{
     text-align: center;
+}
+
+input {
+    padding: 0px 5px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 1px solid silver;
+    background-color: rgba(255, 255, 255, 0.242);
+    margin: 0 5px;
+}
+
+#navbarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#searchBar {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#locationSearchButton {
+    border-radius: 100px;
+    padding: 5px;
+    font-size: 20px;
+    background-color: silver;
+    border: 1px rgb(109, 109, 109) solid;
+}
+
+.navButtons{
+    width: 100px;
+    height: 30px;
+    margin: 0 10px;
 }

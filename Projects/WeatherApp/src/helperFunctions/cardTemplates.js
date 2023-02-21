@@ -1,24 +1,38 @@
-export default class CardTemplates {
-    static hourly(element) {
-        console.log(element);
-        const time = new Date(element.dt * 1000)
-        const weatherInfo = element.weather
-        console.log(weatherInfo);
-        console.log(time);
-        const htmlToReturn = `
-        <div class= "weather-card">
-            <div class= "weather-card__temp">${Math.round(element.temp)}°</div>
-            <div class= "weather-card__time">${time.getHours()}:00</div>
-            <div class= "weather-card__precipitation"><span class="weather-card__precipitation__span">Precipitation:</span><br> ${element.pop * 100}%</div>
-            <div class= "weather-card__wind-speed">Wind Speed:<br> ${element.wind_speed}m/s</div>
-        </div>
-        `
+import getDay from "./getDay.js";
 
-        //Can use math floor above element.pop & element.wind_speed
-        return htmlToReturn
+export default class CardTemplates {
+
+    static hourly(element, timezoneOffset = 0) {
+        const timezone_offset = timezoneOffset * 1000;
+        const current_time = element.dt * 1000
+        const time = new Date(current_time + timezone_offset)
+        const htmlToReturn = `
+        <div class = "weather-card" >
+            
+            <div class="weather-card__temp">${Math.round(element.temp)}°</div>
+            <div class="weather-card__time">${time.getHours()}:00</div>
+            <div class="weather-card__precipitation"><span class ="weather-card__precipitation__span">Precipitation</span> <br> ${Math.floor(element.pop * 100)}%</div>
+            <div class="weather-card__wind-speed">Wind Speed <br> ${Math.floor(element.wind_speed)}m/s</div>
+        </div>    
+        `
+        return htmlToReturn;
     }
 
-    static daily() {
-        
+    static daily(element, timezoneOffset, index = 0) {
+        const currentDay = getDay((new Date().getDay() + index))
+        const timezone_offset = timezoneOffset * 1000;
+        const current_time = element.dt * 1000
+        const time = new Date(current_time + timezone_offset)
+        const htmlToReturn = `
+        <div class = "weather-card" >
+            
+            <div class="weather-card__temp">${Math.round(element.temp.max)}°</div>
+            <div class="weather-card__day">${currentDay}</div>
+            <div class="weather-card__precipitation"><span class ="weather-card__precipitation__span">Precipitation</span> <br> ${Math.floor(element.pop * 100)}%</div>
+            <div class="weather-card__wind-speed">Wind Speed <br> ${Math.floor(element.wind_speed)}m/s</div>
+        </div>    
+        `
+        return htmlToReturn;
+
     }
 }

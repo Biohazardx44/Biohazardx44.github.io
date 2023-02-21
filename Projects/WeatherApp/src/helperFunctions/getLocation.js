@@ -15,4 +15,4 @@ const getLocation = () => {
     })
 };
 
-export default getLocation
+export default getLocation;
