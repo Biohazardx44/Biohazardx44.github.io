@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-image: url(./assets/wp3980172.webp);
+    background-attachment: fixed;
+}
+
+#cardsContainer {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    width: 100%;
+    margin: 0px auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.weather-card {
+    background-color: #a0a0a091;
+    margin: 25px 0;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+    border-radius: 50px;
+    padding: 20px;
+    box-shadow: 5px 5px 50px rgb(106, 105, 105);
+}
+
+.weather-card__temp {
+    font-size: 4.5rem;
+}
+
+.weather-card__time{
+    font-size: 3rem;
+}
+
+.weather-card__precipitation{
+text-align: center;
+font-size: 3.5rem;
+}
+
+.weather-card__precipitation__span{
+    font-size: 2rem;
+}
+
+.weather-card__wind-speed{
+    text-align: center;
+}
