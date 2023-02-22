@@ -100,7 +100,8 @@ body {
 
 #cvBackgroundImage,
 #weatherAppBackgroundImage,
-#hangmanBackgroundImage {
+#hangmanBackgroundImage,
+#swapiAPITableBackgroundImage {
     background-image: url("./Assets/Images/CV.png");
     background-size: 100%;
     background-repeat: repeat;
@@ -112,4 +113,8 @@ body {
 
 #hangmanBackgroundImage {
     background-image: url("./Assets/Images/Hangman.png");
+}
+
+#swapiAPITableBackgroundImage {
+    background-image: url("./Assets/Images/SwapiAPITable.png");
 }
