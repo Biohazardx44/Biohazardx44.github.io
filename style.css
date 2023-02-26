@@ -14,101 +14,149 @@
 }
 
 :root {
+    --primary-gradient: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
     --primary-black: #000000;
     --primary-white: #ffffff;
     --primary-red: #ff0000;
-    --secondary-red: #b31e1e;
     --primary-gray: rgba(200, 200, 200, 0.5);
     --secondary-gray: #bcbcbc;
-    --primary-orange: #ff4d00;
 }
 
 body {
     background-image: url("./Assets/Images/Background_Image.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% auto;
 }
 
 #pageBody {
-    width: 1080px;
-    margin: 0px auto;
+    font-family: Lato;
     background-color: var(--primary-white);
+    width: 54%;
+    margin: 0px auto;
     display: flex;
     flex-wrap: wrap;
-    font-family: Lato;
+}
+
+h1 {
+    margin: 0 0 10px 0;
+    font-size: 1.8rem;
 }
 
 #headerBackground {
     background-image: url("./Assets/Images/Background_Header.webp");
-    border: 5px solid var(--primary-orange);
+    border: 5px solid var(--primary-red);
     height: 128px;
     width: 100%;
 }
 
-.page-section {
+.pageSection {
+    border: 5px solid var(--primary-red);
+    border-top: 0px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    border: 5px solid var(--primary-orange);
-    border-top: 0px;
 }
 
-.card-style {
-    width: 100%;
-    padding: 0px 25px;
+.cardStyle {
     background-color: var(--secondary-gray);
+    padding: 0px 25px;
+    width: 100%;
 }
 
-.page-buttons {
+.pageButtons {
     font-family: Lato;
-    background-color: var(--secondary-red);
+    font-size: 2rem;
+    background: var(--primary-black);
     color: var(--primary-white);
-    margin-top: 5px;
-    margin-left: 25%;
+    border-radius: 25px;
+    border: none;
+    margin: 15px 0 5px 25%;
     width: 50%;
     height: 50px;
-    font-size: 2rem;
-    border-radius: 25px;
-    border-color: var(--primary-black);
-    overflow: hidden;
-}
-
-.cv-page-buttons:hover {
-    background-color: var(--primary-red);
-    cursor: pointer;
-}
-
-.cv-page-buttons:focus {
     outline: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
 }
 
-.anchored-background-image,
-.anchored-background-image-curtain {
-    height: 100px;
+.pageButtons:before {
+    content: '';
+    background: var(--primary-gradient);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 25px;
+}
+
+.pageButtons:active {
+    color: var(--primary-black);
+}
+
+.pageButtons:active:after {
+    background: transparent;
+}
+
+.pageButtons:hover:before {
+    opacity: 1;
+}
+
+.pageButtons:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-black);
+    left: 0;
+    top: 0;
+    border-radius: 25px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.anchoredBackgroundImage,
+.anchoredBackgroundImageCurtain {
+    height: 12rem;
     border-radius: 25px;
     background-repeat: repeat;
     background-attachment: fixed;
 }
 
-.anchored-background-image-curtain {
+.anchoredBackgroundImageCurtain {
     background-color: var(--primary-gray);
-    border: 3px solid var(--primary-black);
+    border: 4px solid var(--primary-black);
 }
 
 #cvBackgroundImage,
-#weatherAppBackgroundImage,
 #hangmanBackgroundImage,
-#swapiAPITableBackgroundImage {
-    background-image: url("./Assets/Images/CV.png");
-    background-size: 100%;
-    background-repeat: repeat;
-}
-
+#swapiAPITableBackgroundImage,
 #weatherAppBackgroundImage {
-    background-image: url("./Assets/Images/WeatherApp.png");
+    background-image: url("./Assets/Images/CV.png");
+    background-size: 100% auto;
+    background-repeat: repeat;
 }
 
 #hangmanBackgroundImage {
@@ -117,4 +165,26 @@ body {
 
 #swapiAPITableBackgroundImage {
     background-image: url("./Assets/Images/SwapiAPITable.png");
+}
+
+#weatherAppBackgroundImage {
+    background-image: url("./Assets/Images/WeatherApp.png");
+}
+
+@media only screen and (max-width: 998px) {
+    body {
+        display: block;
+        background-repeat: repeat;
+    }
+
+    #pageBody {
+        width: 90%;
+    }
+
+    #cvBackgroundImage,
+    #hangmanBackgroundImage,
+    #swapiAPITableBackgroundImage,
+    #weatherAppBackgroundImage {
+        display: block;
+    }
 }
