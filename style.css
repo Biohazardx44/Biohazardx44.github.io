@@ -178,7 +178,7 @@ h1 {
     }
 
     #pageBody {
-        width: 90%;
+        width: 100%;
     }
 
     #cvBackgroundImage,
@@ -187,4 +187,13 @@ h1 {
     #weatherAppBackgroundImage {
         display: block;
     }
+
+    .pageButtons {
+        width: 100%;
+        font-size: 1.3rem;
+        margin: 0;
+        margin-top: 10px;
+    }
+
+
 }
