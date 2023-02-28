@@ -152,7 +152,7 @@ h1 {
 
 #cvBackgroundImage,
 #hangmanBackgroundImage,
-#swapiAPITableBackgroundImage,
+#swapiAPIWebpageBackgroundImage,
 #weatherAppBackgroundImage {
     background-image: url("./Assets/Images/CV.png");
     background-size: 100% auto;
@@ -163,8 +163,8 @@ h1 {
     background-image: url("./Assets/Images/Hangman.png");
 }
 
-#swapiAPITableBackgroundImage {
-    background-image: url("./Assets/Images/SwapiAPITable.png");
+#swapiAPIWebpageBackgroundImage {
+    background-image: url("./Assets/Images/SwapiAPIWebpage.png");
 }
 
 #weatherAppBackgroundImage {
@@ -183,7 +183,7 @@ h1 {
 
     #cvBackgroundImage,
     #hangmanBackgroundImage,
-    #swapiAPITableBackgroundImage,
+    #swapiAPIWebpageBackgroundImage,
     #weatherAppBackgroundImage {
         display: block;
     }
@@ -194,6 +194,4 @@ h1 {
         margin: 0;
         margin-top: 10px;
     }
-
-
 }
