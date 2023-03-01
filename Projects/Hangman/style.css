@@ -1,8 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@700&display=swap');
 
+:root {
+    --primary-black: rgb(0, 0, 0);
+    --primary-white: rgb(255, 255, 255);
+    --primary-lime: rgb(100, 215, 55);
+    --primary-gray: rgb(230, 230, 230);
+    --primary-green: rgb(35, 170, 35);
+    --secondary-green: rgb(15, 120, 15);
+}
+
 body {
-    background: rgb(100, 215, 55);
-    color: rgb(255, 255, 255);
+    background-color: var(--primary-lime);
+    color: var(--primary-white);
     font-family: 'Sofia Sans Condensed', sans-serif;
     text-align: center;
     font-size: 1.2rem;
@@ -12,9 +21,6 @@ h1,
 h2 {
     text-transform: uppercase;
     margin: 0.2rem 0;
-}
-
-h1 {
     font-size: 3.5rem;
 }
 
@@ -32,34 +38,48 @@ p {
     font-size: 1.5em;
 }
 
-.active {
-    color: transparent;
-    content: '/';
-}
-
 #alphabet {
     margin: 10px auto;
     padding: 0;
     max-width: 900px;
 }
 
-#alphabet li {
-    box-shadow: 5px 5px 15px 3px rgb(255, 255, 255);
-    background: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border: solid 1px rgb(0, 0, 0);
+#alphabet li,
+button {
+    box-shadow: 5px 5px 15px 3px var(--primary-white);
+    border: solid 2px var(--primary-black);
     cursor: pointer;
+    border-radius: 10px;
+}
+
+#alphabet li {
+    background-color: var(--primary-white);
+    color: var(--primary-black);
     list-style: none;
     float: left;
     margin: 0 0.6rem 0.6rem 0;
     padding-top: 10px;
     width: 55px;
     height: 35px;
-    border-radius: 10px;
 }
 
 #alphabet li:hover {
-    background: rgb(230, 230, 230);
+    background-color: var(--primary-gray);
+}
+
+button {
+    background-color: var(--primary-green);
+    color: var(--primary-white);
+    text-decoration: none;
+    outline: none;
+    font-size: 1.4em;
+    margin: 0.6rem;
+    padding: 15px;
+    width: 200px;
+}
+
+button:hover {
+    background-color: var(--secondary-green);
 }
 
 #my-word {
@@ -83,21 +103,20 @@ p {
     font-size: 1.5em;
 }
 
-button {
-    box-shadow: 5px 5px 15px 3px rgb(255, 255, 255);
-    background: rgb(35, 170, 35);
-    color: rgb(255, 255, 255);
-    border: solid 1px rgb(0, 0, 0);
-    text-decoration: none;
-    cursor: pointer;
-    outline: none;
-    font-size: 1.4em;
-    border-radius: 10px;
-    padding: 15px;
-    width: 200px;
-    margin: 0.6rem;
-}
+@media only screen and (max-width: 998px) {
+    #alphabet {
+        margin: 0;
+    }
 
-button:hover {
-    background: rgb(15, 120, 15);
+    #alphabet li {
+        width: 35px;
+        height: 20px;
+        margin: 5px;
+        padding: 10px 0;
+    }
+
+    #categoryName::before {
+        content: "\a\a\a";
+        white-space: pre;
+    }
 }
