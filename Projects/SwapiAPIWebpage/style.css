@@ -55,6 +55,11 @@ button:hover {
     color: var(--primary-black);
 }
 
+input:active,
+button:active {
+    background-color: var(--dark-red);
+}
+
 .item-stats {
     color: var(--secondary-red);
     overflow-wrap: break-word;
@@ -75,4 +80,18 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media only screen and (max-width: 998px) {
+    button {
+        width: 30%;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+    }
+
+    .box {
+        width: 90%;
+    }
 }

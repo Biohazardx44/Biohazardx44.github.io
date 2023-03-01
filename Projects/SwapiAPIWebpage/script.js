@@ -1,7 +1,7 @@
 /**
  * Swapi API Webpage
  * Created by Nikola Ilievski
- * Version: 1.0.0
+ * Version: 1.1.0
  */
 
 const button = document.getElementsByTagName('input');
@@ -10,7 +10,7 @@ const container = document.querySelector('.buttons-container');
 
 /**
  * A function that fetches the data from the Swapi API
- * @param {object} apiUrl and stores the response and
+ * @param {string} apiUrl and stores the response and
  * @returns the data
  */
 async function fetchData(apiUrl) {
@@ -28,7 +28,7 @@ async function generateButtons(type) {
 
   /**
    * A function that is used to get data from storage. It takes
-   * @param {object} apiUrl 
+   * @param {string} apiUrl 
    * @param {string} storageKey 
    * @returns the data
    */
