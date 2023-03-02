@@ -151,6 +151,7 @@ h1 {
 }
 
 #cvBackgroundImage,
+#calculatorBackgroundImage,
 #hangmanBackgroundImage,
 #rockPaperScissorsBackgroundImage,
 #swapiAPIWebpageBackgroundImage,
@@ -158,6 +159,10 @@ h1 {
     background-image: url("./Assets/Images/CV.png");
     background-size: 100% auto;
     background-repeat: repeat;
+}
+
+#calculatorBackgroundImage {
+    background-image: url("./Assets/Images/Calculator.png");
 }
 
 #hangmanBackgroundImage {
@@ -187,6 +192,7 @@ h1 {
     }
 
     #cvBackgroundImage,
+    #calculatorBackgroundImage,
     #hangmanBackgroundImage,
     #rockPaperScissorsBackgroundImage,
     #swapiAPIWebpageBackgroundImage,
