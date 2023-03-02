@@ -120,7 +120,7 @@ button {
 }
 
 @media only screen and (max-width: 998px) {
-  .container button{
+  .container button {
     padding: 0;
     margin: 0;
   }
@@ -131,5 +131,9 @@ button {
 
   .final-result-inner button {
     padding: 10px;
+  }
+
+  .container .wrapper {
+    height: 200px;
   }
 }
