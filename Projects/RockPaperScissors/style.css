@@ -118,3 +118,18 @@ button {
   font-weight: 700;
   font-size: 1.2em;
 }
+
+@media only screen and (max-width: 998px) {
+  .container button{
+    padding: 0;
+    margin: 0;
+  }
+
+  .container button img {
+    width: 50px;
+  }
+
+  .final-result-inner button {
+    padding: 10px;
+  }
+}
