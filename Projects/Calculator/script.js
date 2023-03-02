@@ -1,7 +1,7 @@
 /**
  * Calculator
  * Created by Nikola Ilievski
- * Version: 1.0.0
+ * Version: 1.0.1
  */
 
 const firstDisplay = document.querySelector('[cOperation]');
