@@ -1,7 +1,7 @@
 /**
  * Swapi API Webpage
  * Created by Nikola Ilievski
- * Version: 1.1.0
+ * Version: 1.1.1
  */
 
 const button = document.getElementsByTagName('input');
@@ -57,6 +57,10 @@ async function generateButtons(type) {
     buttonsDiv.appendChild(button);
   };
 
+  /**
+   * A function that gets the text content of the button and uses it to create an API URL and
+   * it will use this URL to get data from storage and print a heading and list of item specs
+   */
   buttonsDiv.addEventListener('click', async (event) => {
     if (event.target.tagName === 'BUTTON') {
       const name = event.target.textContent;
@@ -111,6 +115,10 @@ async function generateButtons(type) {
   mainDiv.appendChild(buttonsDiv);
 };
 
+/**
+ * A function that clears the innerHTML when a button is clicked and
+ * calls the generateButtons after that
+ */
 const boxes = document.querySelectorAll('.box');
 boxes.forEach((box) => {
   box.addEventListener('click', async () => {
@@ -138,8 +146,11 @@ function createButton(text) {
   return button;
 };
 
-const categoryButtons = document.querySelectorAll('.category-button');
-categoryButtons.forEach(button => {
+/**
+ * A function to remove the 'Back To Main Page' button and add a new one
+ */
+const buttons = document.querySelectorAll('.category-button, .item-button');
+buttons.forEach(button => {
   button.addEventListener('click', () => {
     const backButton = document.querySelector('.back-to-main-page');
     if (backButton) {
@@ -155,23 +166,9 @@ categoryButtons.forEach(button => {
   });
 });
 
-const itemButtons = document.querySelectorAll('.item-button');
-itemButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const backButton = document.querySelector('.back-to-main-page');
-    if (backButton) {
-      backButton.remove();
-    };
-
-    const backToMainButton = createButton('Back To Main Page');
-    backToMainButton.addEventListener('click', () => {
-      location.reload();
-    });
-
-    container.appendChild(backToMainButton);
-  });
-});
-
+/**
+ * A function that reloads the page on a button click
+ */
 const alwaysPresentButton = createButton('Back To Main Page');
 alwaysPresentButton.addEventListener('click', () => {
   location.reload();

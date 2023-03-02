@@ -152,6 +152,7 @@ h1 {
 
 #cvBackgroundImage,
 #hangmanBackgroundImage,
+#rockPaperScissorsBackgroundImage,
 #swapiAPIWebpageBackgroundImage,
 #weatherAppBackgroundImage {
     background-image: url("./Assets/Images/CV.png");
@@ -161,6 +162,10 @@ h1 {
 
 #hangmanBackgroundImage {
     background-image: url("./Assets/Images/Hangman.png");
+}
+
+#rockPaperScissorsBackgroundImage {
+    background-image: url("./Assets/Images/RockPaperScissors.png");
 }
 
 #swapiAPIWebpageBackgroundImage {
@@ -183,6 +188,7 @@ h1 {
 
     #cvBackgroundImage,
     #hangmanBackgroundImage,
+    #rockPaperScissorsBackgroundImage,
     #swapiAPIWebpageBackgroundImage,
     #weatherAppBackgroundImage {
         display: block;
