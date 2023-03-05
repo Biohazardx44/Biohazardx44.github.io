@@ -1,0 +1,151 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url(./img/store-background.webp);
+    background-attachment: fixed;
+}
+
+h1,
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;
+    background-color: silver;
+    color: rgb(150, 0, 0);
+}
+
+h2 {
+    background-color: rgba(231, 231, 231, 0.541);
+    padding: 0;
+    color: rgb(0, 0, 0);
+    border-radius: 25px 25px 0 0;
+}
+
+#mens-clothing,
+#womens-clothing,
+#electronics,
+#jewelery {
+    background-color: rgba(179, 112, 24, 0.534);
+    border-radius: 30px 30px 0 0;
+    margin: 20px 20px 0 20px;
+    border: 4px solid black;
+}
+
+img {
+    height: 150px;
+    width: auto;
+    border: 2px solid black;
+}
+
+#mensContainer,
+#womensContainer,
+#electronicsContainer,
+#jeweleryContainer {
+    border: 2px solid black;
+}
+
+.image,
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.title {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: aliceblue;
+    padding-bottom: 2px;
+}
+
+button {
+    color: rgb(150, 0, 0);
+    background-color: silver;
+    border: 2px solid black;
+    padding: 6px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+button:hover {
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.btn-container {
+    padding: 0.5rem 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.desc {
+    text-align: center;
+    justify-content: center;
+    margin: 0 4.5rem;
+}
+
+/* Login and Register Form Styles */
+#login-form,
+#register-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: none;
+}
+
+#login-form h2,
+#register-form h2 {
+    margin-top: 0;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"],
+#register-form input[type="text"],
+#register-form input[type="email"],
+#register-form input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#login-form button[type="submit"],
+#register-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+#login-form button[type="submit"]:hover,
+#register-form button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+.hidden {
+    display: none;
+}
+
+#buttons {
+    text-align: center;
+}

@@ -68,7 +68,7 @@ h1 {
 
 .pageButtons {
     font-family: Lato;
-    font-size: 2rem;
+    font-size: 1.7rem;
     background: var(--primary-black);
     color: var(--primary-white);
     border-radius: 25px;

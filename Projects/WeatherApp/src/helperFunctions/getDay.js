@@ -1,3 +1,8 @@
+/**
+ * A function that accepts a
+ * @param {number} number and
+ * @returns the current day
+ */
 function getDay(number) {
     number = number % 7;
     if (number == 0) return 'Sunday';
@@ -7,6 +12,6 @@ function getDay(number) {
     if (number == 4) return 'Thursday';
     if (number == 5) return 'Friday';
     if (number == 6) return 'Saturday';
-}
+};
 
 export default getDay;
