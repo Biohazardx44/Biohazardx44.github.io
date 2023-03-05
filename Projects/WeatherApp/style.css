@@ -76,6 +76,7 @@ input {
 
 #locationSearchButton {
     padding: 5px;
+    padding-bottom: 4px;
     border-radius: 0 10px 10px 0;
     font-size: 20px;
     border: 2px solid var(--secondary-gray);
