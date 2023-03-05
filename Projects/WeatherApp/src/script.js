@@ -5,7 +5,7 @@ import CardTemplates from "./helperFunctions/cardTemplates.js";
 /**
  * Weather App
  * Created by Nikola Ilievski
- * Version: 1.0.0
+ * Version: 1.0.1
  */
 
 const apiParameters = {
