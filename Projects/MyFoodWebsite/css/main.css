@@ -267,7 +267,7 @@ main {
 .tag-box button {
     background-color: var(--secondary-gray);
     transition: all ease-in 100ms;
-    margin: 0 0.4rem;
+    margin: 0.4rem;
     font-size: 0.9rem;
     border-radius: 25px;
     border: none;
