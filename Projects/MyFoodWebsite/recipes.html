@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
+    <title>MyFood</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <!-- Navbar start -->
+    <!-- Navbar Start -->
     <header class="nav-header">
         <nav class="navbar">
             <div class="nav-logo">
@@ -23,6 +23,7 @@
                 </a>
                 <img id="menu" src="./img/menu.svg" alt="Main Menu">
             </div>
+
             <div class="nav-links">
                 <a href="./index.html">Home</a>
                 <a href="./recipes.html">Recipes</a>
@@ -32,7 +33,7 @@
             </div>
         </nav>
     </header>
-    <!-- Navbar end -->
+    <!-- Navbar End -->
 
     <!-- Main Start -->
     <main>
@@ -44,58 +45,111 @@
                     <h3>My food is the best</h3>
                 </div>
             </header>
+
             <div class="recipes">
                 <aside>
                     <h3>Recipes:</h3>
                     <div class="tag-box">
-                        <a href="#">Meat(1)</a>
-                        <a href="#">Salad(1)</a>
-                        <a href="#">Side(1)</a>
-                        <a href="#">Dessert(1)</a>
+                        <button id="showAll">All-(9)</button>
+                        <button id="showMeat">Meat-(2)</button>
+                        <button id="showSalad">Salad-(3)</button>
+                        <button id="showSide">Side-(1)</button>
+                        <button id="showDessert">Dessert-(3)</button>
                     </div>
                 </aside>
+
                 <section class="col-two">
-                    <a href="#" class="recipe">
-                        <img src="./img/meat.jpg" alt="meat">
+                    <div class="recipe meat">
+                        <img src="./img/Meat/rosemary-pork-roast.webp" alt="Rosemary Pork Roast" class="animate-image">
                         <div>
-                            <h4>Steak</h4>
-                            <p>Prep time 15 min | Cook time 5min</p>
+                            <h4>Rosemary Pork Roast</h4>
+                            <p>Prep time 15min | Cook time 75min</p>
                         </div>
-                    </a>
-                    <a href="#" class="recipe">
-                        <img src="./img/salad.jpg" alt="egg salat">
+                    </div>
+
+                    <div class="recipe meat">
+                        <img src="./img/Meat/grilled-cube-steak-rollups.jpg" alt="Grilled Cube Steak Rollups"
+                            class="animate-image">
                         <div>
-                            <h4>Beetroot Salad</h4>
-                            <p>Prep time 15 min | Cook time 5min</p>
+                            <h4>Grilled Cube Steak Rollups</h4>
+                            <p>Prep time 15min | Cook time 45min</p>
                         </div>
-                    </a>
-                    <a href="#" class="recipe">
-                        <img src="./img/side.jpg" alt="Asparigus">
+                    </div>
+
+                    <div class="recipe salad">
+                        <img src="./img/Salad/roasted-vegetable-kale-&-tuna-salad.webp"
+                            alt="Roasted Vegetable, Kale & Tuna Salad" class="animate-image">
                         <div>
-                            <h4>Rosted Asparagus</h4>
-                            <p>Prep time 15 min | Cook time 5min</p>
+                            <h4>Roasted Vegetable, Kale & Tuna Salad</h4>
+                            <p>Prep time 5min | Cook time 10min</p>
                         </div>
-                    </a>
-                    <a href="#" class="recipe">
-                        <img src="./img/desert.jpg" alt="dessert">
+                    </div>
+
+                    <div class="recipe salad">
+                        <img src="./img/Salad/winter-greens-&-citrus-salad.jpg" alt="Winter Greens & Citrus Salad"
+                            class="animate-image">
                         <div>
-                            <h4>Cheese Cake</h4>
-                            <p>Prep time 15 min | Cook time 5min</p>
+                            <h4>Winter Greens & Citrus Salad</h4>
+                            <p>Prep time 5min | Cook time 5min</p>
                         </div>
-                    </a>
+                    </div>
+
+                    <div class="recipe salad">
+                        <img src="./img/Salad/broccoli-avocado-&-almond-salad.webp"
+                            alt="Broccoli, Avocado & Almond Salad" class="animate-image">
+                        <div>
+                            <h4>Broccoli, Avocado & Almond Salad</h4>
+                            <p>Prep time 5min | Cook time 5min</p>
+                        </div>
+                    </div>
+
+                    <div class="recipe side">
+                        <img src="./img/Side/roasted-asparagus.jpeg" alt="Roasted Asparagus" class="animate-image">
+                        <div>
+                            <h4>Roasted Asparagus</h4>
+                            <p>Prep time 5min | Cook time 10min</p>
+                        </div>
+                    </div>
+
+                    <div class="recipe dessert">
+                        <img src="./img/Dessert/molten-chocolate-cake.jpg" alt="Molten Chocolate Cake"
+                            class="animate-image">
+                        <div>
+                            <h4>Molten Chocolate Cake</h4>
+                            <p>Prep time 15min | Cook time 45min</p>
+                        </div>
+                    </div>
+
+                    <div class="recipe dessert">
+                        <img src="./img/Dessert/chocolate-strawberries.jpg" alt="Chocolate Strawberries"
+                            class="animate-image">
+                        <div>
+                            <h4>Chocolate Strawberries</h4>
+                            <p>Prep time 10min | Cook time 10min</p>
+                        </div>
+                    </div>
+
+                    <div class="recipe dessert">
+                        <img src="./img/Dessert/french-toast-with-vanilla-extract.jpg"
+                            alt="French Toast With Vanilla Extract" class="animate-image">
+                        <div>
+                            <h4>French Toast With Vanilla Extract</h4>
+                            <p>Prep time 5min | Cook time 5min</p>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
     </main>
     <!-- Main End -->
 
-    <!--Footer-->
+    <!-- Footer Start -->
     <footer>
         <p>
             &#169; <span class="date"></span> Made by <a href="#">MyFood.</a> All rights reserved.
         </p>
     </footer>
-    <!--Footer-->
+    <!-- Footer End-->
 </body>
 
 </html>

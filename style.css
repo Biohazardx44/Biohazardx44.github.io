@@ -153,6 +153,7 @@ h1 {
 #cvBackgroundImage,
 #calculatorBackgroundImage,
 #hangmanBackgroundImage,
+#myFoodBackgroundImage,
 #rockPaperScissorsBackgroundImage,
 #swapiAPIWebpageBackgroundImage,
 #weatherAppBackgroundImage {
@@ -167,6 +168,10 @@ h1 {
 
 #hangmanBackgroundImage {
     background-image: url("./Assets/Images/Hangman.png");
+}
+
+#myFoodBackgroundImage {
+    background-image: url("./Assets/Images/MyFoodWebsite.png");
 }
 
 #rockPaperScissorsBackgroundImage {
@@ -194,6 +199,7 @@ h1 {
     #cvBackgroundImage,
     #calculatorBackgroundImage,
     #hangmanBackgroundImage,
+    #myFoodBackgroundImage,
     #rockPaperScissorsBackgroundImage,
     #swapiAPIWebpageBackgroundImage,
     #weatherAppBackgroundImage {

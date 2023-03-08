@@ -8,22 +8,22 @@ html {
 }
 
 :root {
-    --background-color: rgba(63, 0, 0, 0.274);
+    --background-color: rgba(65, 0, 0, 0.3);
     --primary-black: #000000;
     --primary-white: #ffffff;
     --primary-red: #ff0000;
     --secondary-red: #b31e1e;
     --primary-gray: #444444;
     --secondary-gray: #979797;
-    --footer: aqua;
+    --footer: rgb(0, 255, 255);
 }
 
 body {
-    margin: 0;
     background-color: var(--background-color);
+    margin: 0;
 }
 
-/* Navbar start */
+/* Navbar Start */
 .nav-header {
     background-color: var(--primary-black);
     display: flex;
@@ -84,9 +84,6 @@ body {
 }
 
 @media screen and (min-width: 992px) {
-    /* #menu{
-        display: none;
-    } */
     .nav-logo img:nth-child(2) {
         display: none;
     }
@@ -109,6 +106,7 @@ body {
 
     .nav-links div a {
         display: inline-block;
+        color: var(--primary-black);
         background-color: var(--primary-red);
         border-radius: 1rem;
         padding: 0.5rem;
@@ -125,7 +123,7 @@ body {
     }
 }
 
-/* Navbar end */
+/* Navbar End */
 
 /* Main Start */
 /* Main Home Start */
@@ -141,7 +139,7 @@ main {
 }
 
 .slide-in {
-    min-height: 50vh;
+    min-height: 35vh;
     opacity: 0;
     filter: blur(5px);
     transform: translateX(-100%);
@@ -157,7 +155,6 @@ main {
     filter: blur(0);
     opacity: 1;
 }
-
 
 .slide-in h2 {
     font-size: 2rem;
@@ -176,7 +173,7 @@ main {
 
 /* Main Recipes Start */
 .recipes-header {
-    background: url('../img/main.jpeg');
+    background-image: url('../img/main.jpeg');
     min-height: 40vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -195,8 +192,8 @@ main {
 }
 
 .hero-content h1 {
-    margin: 0;
     font-size: 1.5rem;
+    margin: 0;
 }
 
 .hero-content h3 {
@@ -267,28 +264,41 @@ main {
     flex-wrap: wrap;
 }
 
-.tag-box a {
-    text-decoration: none;
-    color: var(--primary-gray);
-    display: block;
-    padding-right: 1rem;
-    margin: 0.5rem 0;
+.tag-box button {
+    background-color: var(--secondary-gray);
+    transition: all ease-in 100ms;
+    margin: 0 0.4rem;
+    font-size: 0.9rem;
+    border-radius: 25px;
+    border: none;
 }
 
-.tag-box a:hover {
+.tag-box button:hover {
     color: var(--primary-red);
+    cursor: pointer;
+}
+
+.animate-image {
+    animation: my-animation 5s;
+}
+
+@keyframes my-animation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @media screen and (min-width: 992px) {
     .hero-content h1 {
-        margin: 0;
         font-size: 3rem;
     }
 
     .hero-content h3 {
         font-size: 1.5rem;
-        margin: 0.2rem;
-        color: var(--primary-white);
     }
 
     .recipes {
@@ -313,7 +323,13 @@ main {
 
     .tag-box {
         flex-direction: column;
+        width: 6rem;
     }
+
+    .tag-box button {
+        margin: 0.4rem 0;
+    }
+
 }
 
 /* Main Recipes End */
@@ -335,7 +351,7 @@ form {
     margin: 2rem 0;
     display: flex;
     flex-direction: column;
-    box-shadow: var(--primary-gray) 1px 1px 4px;
+    border: 2px solid var(--secondary-gray);
 }
 
 .form-control {
@@ -365,15 +381,17 @@ textarea {
     margin-bottom: 1rem;
     text-transform: uppercase;
     background-color: var(--primary-red);
-    color: var(--primary-white);
+    color: var(--primary-black);
     border: none;
-    border-radius: 10px;
+    border-radius: 25px;
     cursor: pointer;
+    transition: all ease-in 100ms;
 }
 
 .btn-send:hover {
     opacity: 0.9;
     transform: scale(1.1);
+    color: var(--primary-white);
 }
 
 @media screen and (min-width: 992px) {
@@ -384,13 +402,14 @@ textarea {
 
     .contact form {
         flex-grow: 1;
+        height: 50%;
     }
 }
 
 /* Main Contact End */
 /* Main End */
 
-/* Footer start */
+/* Footer Start */
 footer {
     background-color: var(--primary-black);
     display: flex;
@@ -398,7 +417,6 @@ footer {
     justify-content: center;
     height: 3rem;
     color: var(--primary-white);
-
 }
 
 footer p {
@@ -410,4 +428,4 @@ footer p a {
     color: var(--footer);
 }
 
-/* Footer end */
+/* Footer End */
