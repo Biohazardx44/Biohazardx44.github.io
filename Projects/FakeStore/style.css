@@ -206,14 +206,14 @@ input[type="submit"]:hover {
 
 @media only screen and (max-width: 998px) {
     #logout-button {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         top: 8px;
-        right: 1vw;
-        width: 13%;
+        right: 2vw;
+        width: 20%;
     }
 
     .cartImg {
-        right: 14.5vw;
+        right: 23.5vw;
     }
 
     .productsContainer {
@@ -226,5 +226,14 @@ input[type="submit"]:hover {
         border-top: 2px solid var(--primary-black);
         border-bottom: 2px solid var(--primary-black);
         width: 100%;
+    }
+
+    form {
+        width: 20rem;
+    }
+
+    h1 {
+        text-align: left;
+        padding-left: 10px;
     }
 }
