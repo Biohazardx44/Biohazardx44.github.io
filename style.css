@@ -152,6 +152,7 @@ h1 {
 
 #cvBackgroundImage,
 #calculatorBackgroundImage,
+#fakeStoreBackgroundImage,
 #hangmanBackgroundImage,
 #myFoodBackgroundImage,
 #rockPaperScissorsBackgroundImage,
@@ -164,6 +165,10 @@ h1 {
 
 #calculatorBackgroundImage {
     background-image: url("./Assets/Images/Calculator.png");
+}
+
+#fakeStoreBackgroundImage {
+    background-image: url("./Assets/Images/FakeStore.png");
 }
 
 #hangmanBackgroundImage {
@@ -198,6 +203,7 @@ h1 {
 
     #cvBackgroundImage,
     #calculatorBackgroundImage,
+    #fakeStoreBackgroundImage,
     #hangmanBackgroundImage,
     #myFoodBackgroundImage,
     #rockPaperScissorsBackgroundImage,

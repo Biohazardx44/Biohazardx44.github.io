@@ -5,6 +5,16 @@
     margin: 0;
 }
 
+:root {
+    --primary-white: #ffffff;
+    --primary-black: #000000;
+    --primary-silver: rgb(192, 192, 192);
+    --primary-red: rgb(255, 0, 0);
+    --secondary-red: rgb(150, 0, 0);
+    --card-background: rgba(178, 110, 25, 0.555);
+    --link-color: rgb(125, 0, 255);
+}
+
 body {
     background-image: url(./img/store-background.webp);
     background-attachment: fixed;
@@ -12,140 +22,209 @@ body {
 
 h1,
 h2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 0.5rem 0;
-    background-color: silver;
-    color: rgb(150, 0, 0);
 }
 
 h2 {
-    background-color: rgba(231, 231, 231, 0.541);
-    padding: 0;
-    color: rgb(0, 0, 0);
-    border-radius: 25px 25px 0 0;
+    text-align: center;
 }
 
-#mens-clothing,
-#womens-clothing,
-#electronics,
-#jewelery {
-    background-color: rgba(179, 112, 24, 0.534);
-    border-radius: 30px 30px 0 0;
-    margin: 20px 20px 0 20px;
-    border: 4px solid black;
+.card {
+    background-color: var(--card-background);
+    border: 4px solid var(--primary-black);
+    border-radius: 30px;
+    margin: 1rem;
+}
+
+p {
+    margin-top: 10px;
+    font-weight: 700;
+    text-align: center;
+}
+
+p a {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+p a:visited {
+    color: var(--link-color);
 }
 
 img {
+    border: 3px solid var(--primary-silver);
+    box-shadow: 2px 2px 10px 1px var(--primary-white);
     height: 150px;
     width: auto;
-    border: 2px solid black;
-}
-
-#mensContainer,
-#womensContainer,
-#electronicsContainer,
-#jeweleryContainer {
-    border: 2px solid black;
 }
 
 .image,
 .title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 5px;
+    text-align: center;
+    padding-top: 7px;
 }
 
 .title {
+    color: var(--primary-white);
     text-transform: uppercase;
-    font-weight: bold;
-    color: aliceblue;
-    padding-bottom: 2px;
+    font-weight: 700;
+}
+
+.desc {
+    text-align: center;
+    margin: 0 4.5rem;
+}
+
+.productsContainer {
+    background-color: var(--primary-silver);
+    border-top: 2px solid var(--primary-black);
+    border-bottom: 2px solid var(--primary-black);
+    text-align: center;
 }
 
 button {
-    color: rgb(150, 0, 0);
-    background-color: silver;
-    border: 2px solid black;
-    padding: 6px;
-    border-radius: 20px;
-    text-transform: uppercase;
+    color: var(--primary-black);
+    background-color: var(--primary-red);
+    border: none;
+    border-left: 2px solid var(--primary-black);
+    border-right: 2px solid var(--primary-black);
+    transition: all ease-in 200ms;
+    text-transform: capitalize;
     font-weight: 700;
     font-size: 1.5rem;
+    padding: 7px;
+    width: 19.5vw;
 }
 
 button:hover {
-    color: aliceblue;
+    color: var(--primary-white);
     cursor: pointer;
 }
 
 .btn-container {
     padding: 0.5rem 0;
-    display: flex;
     text-align: center;
-    justify-content: center;
 }
 
-.desc {
-    text-align: center;
-    justify-content: center;
-    margin: 0 4.5rem;
+.buyBtn {
+    color: var(--secondary-red);
+    background-color: var(--primary-silver);
+    border: 2px solid var(--primary-black);
+    text-transform: uppercase;
+    border-radius: 15px;
+    width: auto;
 }
 
-/* Login and Register Form Styles */
-#login-form,
-#register-form {
-    max-width: 400px;
+#logout-button {
+    color: var(--primary-white);
+    background-color: var(--primary-black);
+    border-radius: 15px;
+    position: absolute;
+    top: 6px;
+    right: 0.8vw;
+    width: 6.5%;
+}
+
+#logout-button:hover {
+    color: var(--primary-red);
+}
+
+form {
+    width: 25rem;
     margin: 0 auto;
-    padding: 20px;
+    padding: 1.25rem;
     border: none;
 }
 
-#login-form h2,
-#register-form h2 {
-    margin-top: 0;
+label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
-#login-form input[type="text"],
-#login-form input[type="password"],
-#register-form input[type="text"],
-#register-form input[type="email"],
-#register-form input[type="password"] {
-    display: block;
+input[type="text"],
+input[type="password"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
     border-radius: 3px;
+    border: none;
+    background-color: var(--primary-white);
+    margin-bottom: 20px;
     font-size: 16px;
     box-sizing: border-box;
+    outline: none;
 }
 
-#login-form button[type="submit"],
-#register-form button[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
+input[type="submit"] {
+    background-color: var(--secondary-red);
+    color: var(--primary-white);
+    padding: 10px 30px;
     border-radius: 3px;
+    border: none;
     font-size: 16px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--primary-red);
     cursor: pointer;
-    box-sizing: border-box;
 }
 
-#login-form button[type="submit"]:hover,
-#register-form button[type="submit"]:hover {
-    background-color: #3e8e41;
+.centerInput {
+    text-align: center;
 }
 
-.hidden {
+#registerForm,
+.mainPage {
     display: none;
 }
 
-#buttons {
+.headerDiv {
     text-align: center;
+    background-color: var(--primary-silver);
+    color: var(--secondary-red);
+}
+
+.cartImg {
+    border: 1px solid var(--primary-black);
+    border-radius: 3px;
+    transition: all ease-in 200ms;
+    box-shadow: none;
+    width: 41px;
+    height: 41px;
+    position: absolute;
+    top: 8px;
+    right: 7.5vw;
+
+}
+
+.cartImg:hover {
+    background-color: var(--primary-red);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 998px) {
+    #logout-button {
+        font-size: 1.3rem;
+        top: 8px;
+        right: 1vw;
+        width: 13%;
+    }
+
+    .cartImg {
+        right: 14.5vw;
+    }
+
+    .productsContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        border: none;
+        border-top: 2px solid var(--primary-black);
+        border-bottom: 2px solid var(--primary-black);
+        width: 100%;
+    }
 }
