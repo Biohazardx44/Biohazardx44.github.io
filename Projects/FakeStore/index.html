@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <form id="loginForm" action="javascript:void(0)" method="post" onsubmit="handleLoginForm()">
+  <form class="bounce-in" id="loginForm" action="javascript:void(0)" method="post" onsubmit="handleLoginForm()">
     <h2>Login</h2>
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required>
@@ -20,7 +20,7 @@
     <p>Don't have an account? <a href="#" onclick="showRegisterForm()">Register here.</a></p>
   </form>
 
-  <form id="registerForm" action="javascript:void(0)" method="post" onsubmit="saveUserInformation()">
+  <form class="bounce-in" id="registerForm" action="javascript:void(0)" method="post" onsubmit="saveUserInformation()">
     <h2>Register</h2>
     <label for="new_username">New Username:</label>
     <input type="text" id="new_username" name="new_username" required>
@@ -38,14 +38,14 @@
     </div>
 
     <div class="productsContainer">
-      <button id="btn-all-products">All Products</button>
-      <button id="btn-mens-clothing">Men's Clothing</button>
-      <button id="btn-womens-clothing">Women's Clothing</button>
-      <button id="btn-electronics">Electronics</button>
-      <button id="btn-jewelery">Jewelery</button>
+      <button id="btn-all-products" class="fade-in">All Products</button>
+      <button id="btn-mens-clothing" class="fade-in">Men's Clothing</button>
+      <button id="btn-womens-clothing" class="fade-in">Women's Clothing</button>
+      <button id="btn-electronics" class="fade-in">Electronics</button>
+      <button id="btn-jewelery" class="fade-in">Jewelery</button>
     </div>
 
-    <div id="container"></div>
+    <div id="container" class="fade-in"></div>
     <div id="cart-items"></div>
   </div>
 

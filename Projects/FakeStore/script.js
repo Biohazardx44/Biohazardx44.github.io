@@ -1,12 +1,13 @@
 /**
  * Fake Store
  * Created by Nikola Ilievski
- * Version: 1.0.1
+ * Version: 1.1.0
  */
 
 document.getElementById("loginForm").style.display = "block";
 
 let logoutTimer;
+let cartItems = JSON.parse(sessionStorage.getItem("cartItems")) || [];
 
 /**
  * A function that shows the login form
@@ -106,32 +107,60 @@ const clearContainer = () => {
 }
 
 /**
- * A function that takes in a
- * @param {Object} element and creates the card information and finally
- * @returns the cardInnerHTML
+ * A function that takes in an object element and creates the card information.
+ * @param {Object} element - The object containing information about the product.
+ * @param {number} index - The index of the product in the card.
+ * @returns {string} The HTML markup representing the product card.
  */
-const cardInfo = (element) => {
+const cardInfo = (element, index) => {
     const cardInnerHTML = `
-    <div class="card">
-    <div class="image"><img src="${element.image}"></div>
-    <div class="title">${element.title}</div>
-    <div class="desc"><strong>Description:<br></strong> ${element.description}</div>
-    <div class="btn-container"><button class="buyBtn">Buy: ${element.price} $</button></div>
-    </div>`;
+      <div class="card fade-in">
+        <div class="image"><img src="${element.image}"></div>
+        <div class="title">${element.title}</div>
+        <div class="desc"><strong>Description:<br></strong> ${element.description}</div>
+        <div class="btn-container">
+          <button class="buyBtn" id="buyBtn-${index}">Buy: ${element.price} $</button>
+        </div>
+      </div>`;
     return cardInnerHTML;
-}
+};
 
 /**
- * A function that accepts a
- * @param {Object} json and
- * prints the cards in the html
+ * A function that takes in an object item and creates the card information in the cart.
+ * @param {Object} item - The product item containing information about the product in the cart.
+ * @param {number} index - The index of the product in the cart.
+ * @returns {string} The HTML markup representing the product card in the cart.
+ */
+const cartCardInfo = (item, index) => {
+    const cardInnerHTML = `
+      <div class="card fade-in">
+        <div class="image"><img src="${item.image}"></div>
+        <div class="title">${item.title}</div>
+        <div class="desc"><strong>Description:<br></strong> ${item.description}</div>
+        <div class="btn-container">
+          <button class="removeBtn" data-index="${index}">Remove</button>
+        </div>
+      </div>`;
+    return cardInnerHTML;
+};
+
+/**
+ * A function that handles the data received from the FakeStore API response and renders the product cards in the container.
+ * @param {Object[]} json - An array of product data objects obtained from the FakeStore API.
  */
 const handleData = async (json) => {
-    json.forEach((element) => {
-        const card = cardInfo(element);
+    json.forEach((element, index) => {
+        const card = cardInfo(element, index);
         container.innerHTML += card;
     });
-}
+
+    const buyButtons = document.querySelectorAll(".buyBtn");
+    buyButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            addToCart(json[index]);
+        });
+    });
+};
 
 /**
  * A function that takes a
@@ -227,9 +256,54 @@ document.getElementById("btn-electronics").addEventListener("click", handleElect
 document.getElementById("btn-jewelery").addEventListener("click", handleJewelery);
 
 /**
- * Function is under maintenance
+ * A function that toggles the display of the cart and updates its content based on the current cart items.
+ * If the cart is empty, it displays a message indicating so; otherwise, it renders the product cards in the cart.
  */
 function toggleCart() {
     clearContainer();
-    alert("Cart is still under maintenance!")
+    if (cartItems.length === 0) {
+        container.innerHTML = "<h2 class='fade-in'>Your cart is empty.</h2>";
+    } else {
+        const cartInnerHTML = cartItems.map((item, index) => cartCardInfo(item, index)).join("");
+        container.innerHTML = cartInnerHTML;
+
+        const removeButtons = document.querySelectorAll(".removeBtn");
+        removeButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const index = button.getAttribute("data-index");
+                removeFromCart(index);
+            });
+        });
+    }
+}
+
+/**
+ * A function that updates the cart items in the session storage.
+ * It saves the current cart items as a JSON string in the "cartItems" key of the session storage.
+ */
+function updateCartInSessionStorage() {
+    sessionStorage.setItem("cartItems", JSON.stringify(cartItems));
+}
+
+/**
+ * A function that adds an item to the cart, displays an alert confirming the action,
+ * and updates the cart items in the session storage.
+ * @param {Object} item - The item to be added to the cart.
+ */
+function addToCart(item) {
+    cartItems.push(item);
+    alert(`${item.title} added to cart!`);
+    updateCartInSessionStorage();
+}
+
+/**
+ * A function that removes an item from the cart, displays an alert confirming the action,
+ * and updates the cart items in the session storage.
+ * @param {number} index - The index of the item to be removed from the cart.
+ */
+function removeFromCart(index) {
+    const removedItem = cartItems.splice(index, 1)[0];
+    toggleCart();
+    alert(`${removedItem.title} removed from cart!`);
+    updateCartInSessionStorage();
 }
