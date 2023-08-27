@@ -119,7 +119,7 @@ button {
   font-size: 1.2em;
 }
 
-@media only screen and (max-width: 998px) {
+@media only screen and (max-width: 992px) {
   .container button {
     padding: 0;
     margin: 0;

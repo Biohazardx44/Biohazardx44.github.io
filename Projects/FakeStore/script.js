@@ -1,7 +1,7 @@
 /**
  * Fake Store
  * Created by Nikola Ilievski
- * Version: 1.1.0
+ * Version: 1.1.1
  */
 
 document.getElementById("loginForm").style.display = "block";

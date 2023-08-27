@@ -103,7 +103,7 @@ button:hover {
     font-size: 1.5em;
 }
 
-@media only screen and (max-width: 998px) {
+@media only screen and (max-width: 992px) {
     #alphabet {
         margin: 0;
     }

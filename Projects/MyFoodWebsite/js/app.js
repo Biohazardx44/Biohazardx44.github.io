@@ -1,7 +1,7 @@
 /**
  * MyFood Website
  * Created by Nikola Ilievski
- * Version: 1.0.1
+ * Version: 1.0.2
  */
 
 const menu = document.querySelector("#menu");

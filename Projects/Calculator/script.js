@@ -1,7 +1,7 @@
 /**
  * Calculator
  * Created by Nikola Ilievski
- * Version: 1.0.1
+ * Version: 1.0.2
  */
 
 const firstDisplay = document.querySelector('[cOperation]');
@@ -100,7 +100,15 @@ function equals() {
     secondDisplay.textContent = "Can't divide by 0";
     return;
   };
-  secondDisplay.textContent = formatResult(result);
+  const formattedResult = formatResult(result);
+  if (formattedResult.length >= 12) {
+    clear();
+    firstDisplay.textContent = 'Number is too large!';
+    secondDisplay.textContent = 'Error!';
+    return;
+  }
+
+  secondDisplay.textContent = formattedResult;
   firstDisplay.textContent = `${num1} ${currentAction} ${num2} =`;
   currentAction = null;
 };

@@ -82,7 +82,7 @@ button:active {
     align-items: center;
 }
 
-@media only screen and (max-width: 998px) {
+@media only screen and (max-width: 992px) {
     button {
         width: 30%;
     }

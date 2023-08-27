@@ -1,7 +1,7 @@
 /**
  * Swapi API Webpage
  * Created by Nikola Ilievski
- * Version: 1.1.1
+ * Version: 1.1.2
  */
 
 const button = document.getElementsByTagName('input');
@@ -147,7 +147,7 @@ function createButton(text) {
 };
 
 /**
- * A function to remove the 'Back To Main Page' button and add a new one
+ * A function to remove the 'Main Page' button and add a new one
  */
 const buttons = document.querySelectorAll('.category-button, .item-button');
 buttons.forEach(button => {
@@ -157,7 +157,7 @@ buttons.forEach(button => {
       backButton.remove();
     };
 
-    const backToMainButton = createButton('Back To Main Page');
+    const backToMainButton = createButton('Main Page');
     backToMainButton.addEventListener('click', () => {
       location.reload();
     });
@@ -169,7 +169,7 @@ buttons.forEach(button => {
 /**
  * A function that reloads the page on a button click
  */
-const alwaysPresentButton = createButton('Back To Main Page');
+const alwaysPresentButton = createButton('Main Page');
 alwaysPresentButton.addEventListener('click', () => {
   location.reload();
 });

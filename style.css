@@ -14,10 +14,10 @@
 }
 
 :root {
-    --primary-gradient: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    --primary-gradient: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #ff0000);
     --primary-black: #000000;
     --primary-white: #ffffff;
-    --primary-red: #ff0000;
+    --main-border: #666666;
     --primary-gray: rgba(200, 200, 200, 0.5);
     --secondary-gray: #bcbcbc;
 }
@@ -25,14 +25,15 @@
 body {
     background-image: url("./Assets/Images/Background_Image.jpg");
     background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-repeat: repeat;
+    background-size: 50% auto;
 }
 
 #pageBody {
     font-family: Lato;
     background-color: var(--primary-white);
-    width: 54%;
+    border-radius: 25px;
+    width: 70%;
     margin: 0px auto;
     display: flex;
     flex-wrap: wrap;
@@ -44,14 +45,16 @@ h1 {
 }
 
 #headerBackground {
-    background-image: url("./Assets/Images/Background_Header.webp");
-    border: 5px solid var(--primary-red);
+    background-image: url("./Assets/Images/Background_Header.jpg");
+    border: 5px solid var(--main-border);
+    border-radius: 25px 25px 0 0;
     height: 128px;
     width: 100%;
 }
 
 .pageSection {
-    border: 5px solid var(--primary-red);
+    border: 5px solid var(--main-border);
+    border-radius: 0 0 25px 25px;
     border-top: 0px;
     width: 100%;
     display: flex;
@@ -64,6 +67,10 @@ h1 {
     background-color: var(--secondary-gray);
     padding: 0px 25px;
     width: 100%;
+}
+
+.lastCardStyle {
+    border-radius: 0 0 20px 20px;
 }
 
 .pageButtons {
@@ -150,7 +157,6 @@ h1 {
     border: 4px solid var(--primary-black);
 }
 
-#cvBackgroundImage,
 #calculatorBackgroundImage,
 #fakeStoreBackgroundImage,
 #hangmanBackgroundImage,
@@ -158,13 +164,9 @@ h1 {
 #rockPaperScissorsBackgroundImage,
 #swapiAPIWebpageBackgroundImage,
 #weatherAppBackgroundImage {
-    background-image: url("./Assets/Images/CV.png");
+    background-image: url("./Assets/Images/Calculator.png");
     background-size: 100% auto;
     background-repeat: repeat;
-}
-
-#calculatorBackgroundImage {
-    background-image: url("./Assets/Images/Calculator.png");
 }
 
 #fakeStoreBackgroundImage {
@@ -194,14 +196,13 @@ h1 {
 @media only screen and (max-width: 998px) {
     body {
         display: block;
-        background-repeat: repeat;
+        background-size: 100% auto;
     }
 
     #pageBody {
         width: 100%;
     }
 
-    #cvBackgroundImage,
     #calculatorBackgroundImage,
     #fakeStoreBackgroundImage,
     #hangmanBackgroundImage,

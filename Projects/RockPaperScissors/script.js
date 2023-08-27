@@ -1,7 +1,7 @@
 /**
  * Rock Paper Scissors
  * Created by Nikola Ilievski
- * Version: 1.1.2
+ * Version: 1.1.3
  */
 
 let pcScore = 0;
